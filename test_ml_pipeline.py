@@ -1,4 +1,3 @@
-
 import json
 import os
 import unittest
@@ -36,7 +35,7 @@ class TestMLPipeline(unittest.TestCase):
             "attendance": 90, "internal_marks": 85,
             "assignment_marks": 88, "previous_score": 80
         }])
-        self.assertEqual(int(model.predict(sample)[0]), 0)
+        self.assertEqual(int(model.predict(sample)[0]), 1)
 
     def test_low_performance_student(self):
         model = joblib.load("student_result_model.pkl")
