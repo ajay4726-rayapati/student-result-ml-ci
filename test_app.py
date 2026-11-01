@@ -8,7 +8,7 @@ class TestPredictionApplication(unittest.TestCase):
     def test_health_endpoint(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.get_json()["status"], "ok")
+        self.assertEqual(response.get_json()["status"], "intentional_failure")
 
     def test_high_performance_prediction(self):
         response = self.client.post("/predict", json={
